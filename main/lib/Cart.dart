@@ -3,23 +3,36 @@ import 'package:flutter/material.dart';
 import 'package:main/game.dart';
 
 class Cart {
+  String _text = "Add to Cart";
   static List cartList = [];
 
-  void cartBtnPreesed(Game game){
-    if(cartList.any((element) => element == game)){
+  String getTextState() {
+    return _text;
+  }
+
+  void cartBtnPreesed(Game game) {
+    if (cartList.any((element) => element == game)) {
       game.removeFromCart();
-    }
-    else{
+    } else {
       game.addToCart();
     }
   }
 
-  IconData cartIconStateChange(Game game){
-    if(cartList.any((element) => element == game)){
+  IconData cartIconStateChange(Game game) {
+    bool isGameInCart = cartList.any((element) => element == game);
+    cartTextState(isGameInCart);
+    if (isGameInCart) {
       return Icons.remove;
-    }
-    else{
+    } else {
       return Icons.add;
+    }
+  }
+
+  void cartTextState(bool isInCart) {
+    if (isInCart) {
+      _text = "Remove from Cart";
+    } else {
+      _text = "Add to Cart";
     }
   }
 }

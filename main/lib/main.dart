@@ -98,7 +98,7 @@ class _HomeState extends State<Home> {
                   });
                 },
                 icon: Icon(cart.cartIconStateChange(Game.allGames[i])),
-                label: const Text("Add to Cart"),
+                label: Text(cart.getTextState()),
               ),
               ListTile(
                 title: Text(

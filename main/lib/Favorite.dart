@@ -5,20 +5,19 @@ import 'package:main/game.dart';
 class Favorite {
   static List favList = [];
 
-  void favBtnPreesed(Game game){
-    if(favList.any((element) => element == game)){
+  void favBtnPreesed(Game game) {
+    if (favList.any((element) => element == game)) {
       game.removeFromFav();
-    }
-    else{
+    } else {
       game.addToFav();
     }
   }
 
-  IconData favIconStateChange(Game game){
-    if(favList.any((element) => element == game)){
+  IconData favIconStateChange(Game game) {
+    bool isGameInFav = favList.any((element) => element == game);
+    if (isGameInFav) {
       return Icons.favorite;
-    }
-    else{
+    } else {
       return Icons.heart_broken;
     }
   }
