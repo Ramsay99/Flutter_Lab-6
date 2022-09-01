@@ -1,8 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:main/Favorite.dart';
 import 'package:main/Cart.dart';
@@ -138,8 +136,4 @@ class _HomeState extends State<Home> {
           );
         });
   }
-}
-
-String addedToFavorite(String string) {
-  return "$string, Added to Fav";
 }
