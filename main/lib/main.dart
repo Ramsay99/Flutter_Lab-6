@@ -1,13 +1,12 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file:  prefer_const_literals_to_create_immutables
 
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:main/Favorite.dart';
 import 'package:main/Cart.dart';
 import 'package:main/game.dart';
 
 void main(List<String> args) {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -18,11 +17,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Sale on Games!"),
+          title: const Text("Sale on Games!"),
           centerTitle: true,
         ),
         body: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
@@ -33,7 +32,7 @@ class MyApp extends StatelessWidget {
               ],
             ),
           ),
-          child: Home(),
+          child: const Home(),
         ),
       ),
     );
@@ -88,36 +87,36 @@ class _HomeState extends State<Home> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               ElevatedButton.icon(
-                style: ButtonStyle(alignment: Alignment.centerLeft),
+                style: const ButtonStyle(alignment: Alignment.centerLeft),
                 onPressed: () {
                   setState(() {
                     cart.cartBtnPreesed(Game.allGames[i]);
                   });
                 },
                 icon: Icon(cart.cartIconStateChange(Game.allGames[i])),
-                label: Text("Add to Cart"),
+                label: const Text("Add to Cart"),
               ),
               ListTile(
                 title: Text(
                   "${Game.allGames[i].getName() + Game.allGames[i].getAdditionsToNameTitle()}",
-                  style: TextStyle(color: Colors.purple),
+                  style: const TextStyle(color: Colors.purple),
                 ),
                 subtitle: Row(
                   children: [
                     Text(
                       "${Game.allGames[i].getPrice()}",
-                      style: TextStyle(
+                      style: const TextStyle(
                           decoration: TextDecoration.lineThrough,
                           color: Colors.green),
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Text(
                       "${Game.allGames[i].getPriceAfterSale()}",
-                      style: TextStyle(color: Colors.orange),
+                      style: const TextStyle(color: Colors.orange),
                     ),
                   ],
                 ),
@@ -131,7 +130,7 @@ class _HomeState extends State<Home> {
                   child: Icon(favorite.favIconStateChange(Game.allGames[i])),
                 ),
               ),
-              Divider(),
+              const Divider(),
             ],
           );
         });
