@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: const Text("Sale on Games!"),
@@ -87,18 +88,19 @@ class _HomeState extends State<Home> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              const SizedBox(
-                height: 15,
-              ),
-              ElevatedButton.icon(
-                style: const ButtonStyle(alignment: Alignment.centerLeft),
-                onPressed: () {
-                  setState(() {
-                    cart.cartBtnPreesed(Game.allGames[i]);
-                  });
-                },
-                icon: Icon(cart.cartIconStateChange(Game.allGames[i])),
-                label: Text(cart.getTextState()),
+              Container(
+                padding: const EdgeInsets.all(1),
+                margin: EdgeInsets.fromLTRB(14, 8, 0, 0),
+                child: ElevatedButton.icon(
+                  style: const ButtonStyle(),
+                  onPressed: () {
+                    setState(() {
+                      cart.cartBtnPreesed(Game.allGames[i]);
+                    });
+                  },
+                  icon: Icon(cart.cartIconStateChange(Game.allGames[i])),
+                  label: Text(cart.getTextState()),
+                ),
               ),
               ListTile(
                 title: Text(
