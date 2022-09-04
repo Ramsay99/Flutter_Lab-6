@@ -11,7 +11,8 @@ class Cart {
   }
 
   void cartBtnPreesed(Game game) {
-    if (cartList.any((element) => element == game)) {
+    bool isGameInCart = cartList.any((element) => element == game);
+    if (isGameInCart) {
       game.removeFromCart();
     } else {
       game.addToCart();
