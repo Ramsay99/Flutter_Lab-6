@@ -14,7 +14,7 @@ class Favorite {
   }
   
   bool isGameInFav(Game game){
-    return isGameInFav = favList.any((element) => element == game);
+    return favList.any((element) => element == game);
   }
 
   IconData favIconStateChange(Game game) {
