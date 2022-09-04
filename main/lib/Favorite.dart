@@ -6,16 +6,19 @@ class Favorite {
   static List favList = [];
 
   void favBtnPreesed(Game game) {
-    if (favList.any((element) => element == game)) {
+    if (isGameInFav(game)) {
       game.removeFromFav();
     } else {
       game.addToFav();
     }
   }
+  
+  bool isGameInFav(Game game){
+    return isGameInFav = favList.any((element) => element == game);
+  }
 
   IconData favIconStateChange(Game game) {
-    bool isGameInFav = favList.any((element) => element == game);
-    if (isGameInFav) {
+    if (isGameInFav(game)) {
       return Icons.favorite;
     } else {
       return Icons.heart_broken;
