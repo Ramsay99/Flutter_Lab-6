@@ -86,7 +86,7 @@ class _HomeState extends State<Home> {
         itemBuilder: (context, i) {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
                 padding: const EdgeInsets.all(1),

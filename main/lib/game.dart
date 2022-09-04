@@ -15,7 +15,7 @@ class Game {
 
   Game(
       {required String gameName,
-      required double gamePrice,
+      double gamePrice = NOT_DEFINED,
       String imageLocation = DEFAULT_IMG,
       double salePercentage = 1}) {
     _name = gameName;
